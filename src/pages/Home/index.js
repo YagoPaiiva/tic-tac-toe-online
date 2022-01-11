@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import './teste.css'
 import { io } from "socket.io-client";
-const socket = io("http://189.82.239.135:3333");
+const socket = io("");
 
 function Home() {
   const emptyBoard = Array(9).fill("");
