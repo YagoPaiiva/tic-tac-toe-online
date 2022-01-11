@@ -22,6 +22,10 @@ function Home() {
     })
     socket.on('Winner', receive => {
       setWinner(receive)
+      setTimeout(() => {
+        setWinner('')
+        socket.emit('restart', true)
+      }, 2000);
     })
   },[])
 
@@ -60,10 +64,6 @@ function Home() {
             <span className={winner}>{winner}</span> Venceu!
           </h2>
           }
-          <button onClick={()=>{
-            socket.emit('restart', true)
-            setWinner('')
-          }}>Recomeçar</button>
         </footer>
       }
       <span className="created-by">Criado por Yago Paiva</span>
